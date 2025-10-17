@@ -1,0 +1,23 @@
+---
+- name: Debug Variables Playbook
+  hosts: localhost
+  connection: ansible.builtin.local
+  gather_facts: false
+
+  tasks:
+
+    - name: Debug API Token
+      ansible.builtin.debug:
+        msg: "API Token: {{ api_token }}"
+
+    - name: Debug Secret Password
+      ansible.builtin.debug:
+        msg: "Secret Password: {{ secret_pw }}"
+
+    - name: Debug Branch ID
+      ansible.builtin.debug:
+        msg: "Branch ID: {{ branch_id }}"
+
+    - name: Debug Release Major Ver
+      ansible.builtin.debug:
+        msg: "Release Major Ver: {{ release_major_ver }}"
