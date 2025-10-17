@@ -4,6 +4,16 @@
   connection: ansible.builtin.local
   gather_facts: false
 
+  # the playbook will fail if variables are undefined
+  # here we are providing a default mapping
+  # in production we might do this at a lower variable precedence
+  # https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_variables.html#understanding-variable-precedence 
+  vars:
+    api_token: default
+    secret_pw: default
+    branch_id: default
+    release_major_ver: default
+
   tasks:
 
     - name: Debug API Token
